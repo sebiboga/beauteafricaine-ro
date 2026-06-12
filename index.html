@@ -118,18 +118,6 @@ nav {
 .badge-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--accent); animation: pulse 2s infinite; }
 @keyframes pulse { 0%,100% { opacity: 1; } 50% { opacity: 0.3; } }
 .hero-visual { position: relative; display: flex; justify-content: center; align-items: center; }
-.hero-ring { width: 480px; height: 480px; border-radius: 50%; border: 1px solid rgba(244,140,6,0.1); position: relative; display: flex; align-items: center; justify-content: center; animation: float 6s ease-in-out infinite; }
-.hero-ring-inner { width: 360px; height: 360px; border-radius: 50%; border: 1px solid rgba(244,140,6,0.15); display: flex; align-items: center; justify-content: center; }
-.hero-icon { font-size: 6rem; line-height: 1; }
-.hero-ring .orb { position: absolute; width: 12px; height: 12px; background: var(--accent); border-radius: 50%; box-shadow: 0 0 20px var(--accent-glow); }
-.orb:nth-child(1) { top: 0; left: 50%; transform: translateX(-50%); }
-.orb:nth-child(2) { bottom: 0; left: 50%; transform: translateX(-50%); }
-.orb:nth-child(3) { left: 0; top: 50%; transform: translateY(-50%); }
-.orb:nth-child(4) { right: 0; top: 50%; transform: translateY(-50%); }
-.orb:nth-child(5) { top: 15%; right: 15%; }
-.orb:nth-child(6) { bottom: 15%; left: 15%; }
-@keyframes float { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-20px); } }
-
 /* About */
 .page-about { padding: 100px 0; }
 .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start; }
@@ -211,9 +199,7 @@ footer ul li { margin-bottom: 8px; }
   .home-content h1 { font-size: 2.5rem; }
   .home-content p { margin: 0 auto 30px; }
   .home-badges { justify-content: center; }
-  .hero-ring { width: 280px; height: 280px; }
-  .hero-ring-inner { width: 200px; height: 200px; }
-  .hero-icon { font-size: 3.5rem; }
+
   .hero-visual { order: -1; }
   .about-grid { grid-template-columns: 1fr; }
   .contact-grid { grid-template-columns: 1fr; }
@@ -255,14 +241,7 @@ footer ul li { margin-bottom: 8px; }
       </div>
     </div>
     <div class="hero-visual">
-      <div class="hero-ring">
-        <div class="orb"></div><div class="orb"></div>
-        <div class="orb"></div><div class="orb"></div>
-        <div class="orb"></div><div class="orb"></div>
-        <div class="hero-ring-inner">
-          <div class="hero-icon">⛰️</div>
-        </div>
-      </div>
+      <img src="images/rippa3.jpeg" alt="Excavator RIPPA pe șantier" style="width:100%;max-width:500px;border-radius:var(--radius);box-shadow:var(--shadow);">
     </div>
   </div>
 </div>
@@ -310,7 +289,7 @@ footer ul li { margin-bottom: 8px; }
   <div class="fleet-grid">
     <div class="fleet-card">
       <div class="fleet-image">
-        <img src="https://www.rippa.com/wp-content/uploads/2026/01/R15_proc.webp" alt="RIPPA R06 ECO pe șantier" loading="lazy">
+        <img src="images/rippa1.jpeg" alt="RIPPA R06 ECO pe șantier" loading="lazy">
       </div>
       <div class="fleet-info">
         <h3>RIPPA R06 ECO</h3>
@@ -326,7 +305,7 @@ footer ul li { margin-bottom: 8px; }
     </div>
     <div class="fleet-card">
       <div class="fleet-image">
-        <img src="https://www.rippa.com/wp-content/uploads/2025/12/%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_17648262161814.webp" alt="RIPPA R22 PRO pe șantier" loading="lazy">
+        <img src="images/rippa2.jpeg" alt="RIPPA R22 PRO pe șantier" loading="lazy">
       </div>
       <div class="fleet-info">
         <h3>RIPPA R22 PRO</h3>
