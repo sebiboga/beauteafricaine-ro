@@ -97,6 +97,8 @@ nav {
 }
 .btn-primary { background: var(--accent); color: var(--bg); }
 .btn-primary:hover { background: #e07d00; transform: translateY(-2px); box-shadow: 0 8px 30px var(--accent-glow); }
+.btn-outline { background: transparent; color: var(--white); border: 2px solid rgba(255,255,255,0.2); }
+.btn-outline:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-2px); }
 
 /* Home */
 .page-home { display: flex; align-items: center; position: relative; overflow: hidden; }
@@ -154,6 +156,27 @@ nav {
 .btn-submit { width: 100%; padding: 14px; background: var(--accent); color: var(--bg); border: none; border-radius: 8px; font-size: 1rem; font-weight: 600; cursor: pointer; transition: all 0.3s; }
 .btn-submit:hover { background: #e07d00; box-shadow: 0 4px 20px var(--accent-glow); }
 
+/* Magazin */
+.page-magazin { padding: 80px 0; }
+.order-steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin: 32px 0; }
+.step { text-align: center; padding: 20px; }
+.step-num { width: 40px; height: 40px; background: var(--accent); color: var(--bg); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; margin: 0 auto 12px; font-size: 1.1rem; }
+.step h3 { font-size: 0.95rem; color: var(--white); margin-bottom: 6px; }
+.step p { font-size: 0.85rem; color: var(--text-dim); }
+.order-card { background: var(--bg-card); border: 1px solid rgba(244,140,6,0.08); border-radius: var(--radius); padding: 36px; max-width: 720px; margin: 0 auto; }
+.order-card label { font-size: 0.85rem; font-weight: 600; color: var(--text-dim); display: block; margin-top: 16px; }
+.order-card label:first-of-type { margin-top: 0; }
+.order-card input, .order-card textarea, .order-card select { width: 100%; padding: 12px 16px; margin-top: 6px; background: var(--bg); border: 1px solid rgba(255,255,255,0.06); border-radius: 8px; color: var(--text); font-size: 0.95rem; font-family: inherit; transition: border-color 0.3s; }
+.order-card input:focus, .order-card textarea:focus, .order-card select:focus { outline: none; border-color: var(--accent); }
+.order-card select option { background: var(--bg); color: var(--text); }
+.order-card textarea { resize: vertical; }
+.order-msg { display: none; padding: 14px; border-radius: 6px; margin-top: 20px; font-size: 0.9rem; text-align: center; }
+.order-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+
+@media (max-width: 768px) {
+  .order-row { grid-template-columns: 1fr; }
+}
+
 /* Footer */
 footer { border-top: 1px solid rgba(244,140,6,0.06); padding: 48px 0 24px; margin-top: 60px; }
 .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 40px; }
@@ -181,6 +204,7 @@ footer ul li { margin-bottom: 8px; }
   .contact-grid { grid-template-columns: 1fr; }
   .footer-grid { grid-template-columns: 1fr; }
   .section-title { font-size: 2rem; }
+  [style*="grid-template-columns: 1fr 1fr"] { grid-template-columns: 1fr !important; }
 }
 </style>
 </head>
@@ -192,6 +216,7 @@ footer ul li { margin-bottom: 8px; }
     <li><a href="#home" class="active" data-page="home">Acasă</a></li>
     <li><a href="#despre" data-page="despre">Despre</a></li>
     <li><a href="#servicii" data-page="servicii">Servicii</a></li>
+    <li><a href="#magazin" data-page="magazin">MAGAZIN online</a></li>
     <li><a href="#contact" data-page="contact">Contact</a></li>
   </ul>
   <button class="nav-toggle" id="navToggle" aria-label="Menu"><span></span><span></span><span></span></button>
@@ -207,6 +232,7 @@ footer ul li { margin-bottom: 8px; }
       <p>Beauté Africaine S.R.L. prestează servicii profesionale de excavare în județul Cluj și nu numai! Dispunem de un excavator RIPPA de 2 tone și de o echipă calificată pentru proiecte de orice dimensiune!</p>
       <div>
         <a href="#contact" class="btn btn-primary">Cere ofertă →</a>
+        <a href="#magazin" class="btn btn-outline" style="margin-left:12px;">Magazin Online</a>
       </div>
       <div class="home-badges">
         <div class="badge"><span class="badge-dot"></span> Excavator RIPPA 2T</div>
@@ -217,8 +243,15 @@ footer ul li { margin-bottom: 8px; }
     <div class="hero-visual">
       <img src="images/rippa3.jpeg" alt="Excavator RIPPA pe șantier" style="width:100%;max-width:500px;border-radius:var(--radius);box-shadow:var(--shadow);">
     </div>
+    </div>
   </div>
 </div>
+<div style="background:var(--bg-alt);padding:60px 0;text-align:center;border-top:1px solid rgba(244,140,6,0.06);border-bottom:1px solid rgba(244,140,6,0.06);margin-top:40px;">
+  <div class="container">
+    <img src="images/femeia-antreprenor.jpeg" alt="Femeia Antreprenor" style="max-width:100%;width:600px;border-radius:var(--radius);box-shadow:var(--shadow);display:block;margin:0 auto;">
+    <h2 style="color:var(--white);font-size:1.6rem;font-weight:700;margin-top:28px;margin-bottom:8px;">Proiect realizat prin programul <span style="color:var(--accent);">Femeia Antreprenor</span></h2>
+    <p style="color:var(--text-dim);max-width:700px;margin:0 auto;font-size:0.95rem;line-height:1.7;">Beauté Africaine S.R.L. a fost înființată și dezvoltată în cadrul programului guvernamental Femeia Antreprenor, demonstrând că antreprenoriatul feminin poate excela chiar și în domenii precum excavările și extracția resurselor minerale.</p>
+  </div>
 </div>
 </section>
 
@@ -257,11 +290,94 @@ footer ul li { margin-bottom: 8px; }
 <div class="page-services">
 <div class="container">
   <h2 class="section-title">Serviciile <span>Noastre</span></h2>
-  <div class="services-list">
-    <p>• Extracția și dragarea nisipului industrial și a nisipului pentru construcții</p>
-    <p>• Extragerea pietrișului și a pietrelor concasate</p>
-    <p>• Spargerea, zdrobirea și sortarea pietrișului</p>
-    <p>• Mineritul argilei (inclusiv argile refractare), al caolinului și al altor argile ceramice</p>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start;">
+    <div class="services-list" style="font-size:1.15rem;line-height:2;">
+      <p style="padding:16px 0;border-bottom:1px solid rgba(255,255,255,0.04);">• Extracția și dragarea nisipului industrial și a nisipului pentru construcții</p>
+      <p style="padding:16px 0;border-bottom:1px solid rgba(255,255,255,0.04);">• Extragerea pietrișului și a pietrelor concasate</p>
+      <p style="padding:16px 0;border-bottom:1px solid rgba(255,255,255,0.04);">• Spargerea, zdrobirea și sortarea pietrișului</p>
+      <p style="padding:16px 0;border-bottom:1px solid rgba(255,255,255,0.04);">• Mineritul argilei (inclusiv argile refractare), al caolinului și al altor argile ceramice</p>
+      <p style="padding-top:20px;"><a href="#magazin" class="btn btn-primary" onclick="navigateTo('magazin')">Comandă online →</a></p>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+      <img src="images/nisip.jpeg" alt="Nisip industrial" style="width:100%;border-radius:var(--radius);box-shadow:var(--shadow);aspect-ratio:4/3;object-fit:cover;">
+      <img src="images/pietris.jpeg" alt="Pietriș" style="width:100%;border-radius:var(--radius);box-shadow:var(--shadow);aspect-ratio:4/3;object-fit:cover;">
+      <img src="images/concasor.jpeg" alt="Concasor pentru piatră" style="width:100%;border-radius:var(--radius);box-shadow:var(--shadow);aspect-ratio:4/3;object-fit:cover;">
+      <img src="images/cariera.jpeg" alt="Carieră de argilă și caolin" style="width:100%;border-radius:var(--radius);box-shadow:var(--shadow);aspect-ratio:4/3;object-fit:cover;">
+    </div>
+  </div>
+</div>
+</div>
+</section>
+
+<!-- MAGAZIN -->
+<section class="page" id="page-magazin">
+<div class="page-magazin">
+<div class="container">
+  <h2 class="section-title">MAGAZIN <span>online</span></h2>
+  <p class="section-sub">Plasează o comandă de materiale — completează formularul și te vom contacta în cel mai scurt timp.</p>
+
+  <div class="order-steps">
+    <div class="step">
+      <div class="step-num">1</div>
+      <h3>Alege materialul</h3>
+      <p>Selectează tipul de agregat: nisip, pietriș, argilă sau caolin.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <h3>Completează datele</h3>
+      <p>Specifică tonajul, adresa și datele de contact.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <h3>Confirmare</h3>
+      <p>Te vom contacta în 24h pentru confirmare și detalii logistice.</p>
+    </div>
+  </div>
+
+  <div class="order-card">
+    <form id="orderForm">
+      <div class="order-row">
+        <div>
+          <label>Nume / Companie</label>
+          <input type="text" name="nume_companie" placeholder="Numele dumneavoastră" required>
+        </div>
+        <div>
+          <label>Email</label>
+          <input type="email" name="email" placeholder="adresa@exemplu.ro" required>
+        </div>
+      </div>
+      <div class="order-row">
+        <div>
+          <label>Telefon</label>
+          <input type="tel" name="telefon" placeholder="07xx xxx xxx" required>
+        </div>
+        <div>
+          <label>Tip material</label>
+          <select name="tip_material">
+            <option value="Nisip">Nisip</option>
+            <option value="Pietriș">Pietriș</option>
+            <option value="Argilă">Argilă</option>
+            <option value="Caolin">Caolin</option>
+            <option value="Agregate sortate">Agregate sortate</option>
+            <option value="Altele">Altele</option>
+          </select>
+        </div>
+      </div>
+      <div>
+        <label>Cantitate estimată (tone)</label>
+        <input type="number" name="cantitate" placeholder="ex: 100" min="0" step="0.1">
+      </div>
+      <div>
+        <label>Adresă livrare</label>
+        <textarea name="adresa_livrare" rows="3" placeholder="Localitate, județ, adresă completă" required></textarea>
+      </div>
+      <div>
+        <label>Observații</label>
+        <textarea name="observatii" rows="3" placeholder="Alte detalii sau cerințe speciale"></textarea>
+      </div>
+      <div class="order-msg" id="orderMsg"></div>
+      <button type="submit" id="orderBtn" class="btn-submit" style="margin-top:20px;">Trimite comanda</button>
+    </form>
   </div>
 </div>
 </div>
@@ -299,11 +415,22 @@ footer ul li { margin-bottom: 8px; }
     </div>
     <form class="contact-form" id="contactForm">
       <h3>Trimite-ne un mesaj</h3>
-      <div class="form-group"><label for="name">Nume / Companie</label><input type="text" id="name" name="name" required></div>
+      <div class="form-group"><label for="nume">Nume</label><input type="text" id="nume" name="nume" required></div>
       <div class="form-group"><label for="email">Email</label><input type="email" id="email" name="email" required></div>
-      <div class="form-group"><label for="phone">Telefon</label><input type="tel" id="phone" name="phone"></div>
-      <div class="form-group"><label for="message">Mesaj</label><textarea id="message" name="message" required placeholder="Aș dori o ofertă pentru...."></textarea></div>
-      <button type="submit" class="btn-submit">Trimite mesajul</button>
+      <div class="form-group"><label for="telefon">Telefon</label><input type="tel" id="telefon" name="telefon"></div>
+      <div class="form-group">
+        <label for="subiect">Subiect</label>
+        <select id="subiect" name="subiect" style="width:100%;padding:12px 16px;background:var(--bg);border:1px solid rgba(255,255,255,0.06);border-radius:8px;color:var(--text);font-size:0.95rem;font-family:inherit;">
+          <option value="Informații generale">Informații generale</option>
+          <option value="Solicitare ofertă">Solicitare ofertă</option>
+          <option value="Comandă">Comandă</option>
+          <option value="Colaborare">Colaborare</option>
+          <option value="Altele">Altele</option>
+        </select>
+      </div>
+      <div class="form-group"><label for="mesaj">Mesaj</label><textarea id="mesaj" name="mesaj" required placeholder="Scrie-ne mesajul tău..."></textarea></div>
+      <div id="contactMsg" style="display:none;padding:14px;border-radius:6px;margin-top:16px;font-size:0.9rem;text-align:center;"></div>
+      <button type="submit" id="contactBtn" class="btn-submit">Trimite mesaj</button>
     </form>
   </div>
 </div>
@@ -316,7 +443,6 @@ footer ul li { margin-bottom: 8px; }
     <div>
       <div class="footer-logo">Beauté<span> Africaine</span></div>
       <p>Microîntreprindere din Cluj-Napoca specializată în excavări, cu un excavator RIPPA de 2 tone în dotare, echipă calificată și mobilizare rapidă.</p>
-      <img src="images/femeia-antreprenor.jpeg" alt="Femeia antreprenor" style="width:120px;margin-top:16px;border-radius:12px;opacity:0.9;">
     </div>
     <div>
       <h4>Navigare</h4>
@@ -324,6 +450,7 @@ footer ul li { margin-bottom: 8px; }
         <li><a href="#home" onclick="navigateTo('home')">Acasă</a></li>
         <li><a href="#despre" onclick="navigateTo('despre')">Despre noi</a></li>
         <li><a href="#servicii" onclick="navigateTo('servicii')">Servicii</a></li>
+        <li><a href="#magazin" onclick="navigateTo('magazin')">MAGAZIN online</a></li>
         <li><a href="#contact" onclick="navigateTo('contact')">Contact</a></li>
       </ul>
     </div>
@@ -343,8 +470,9 @@ footer ul li { margin-bottom: 8px; }
 </div>
 </footer>
 
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script>
-const pages = ['home','despre','servicii','contact'];
+const pages = ['home','despre','servicii','magazin','contact'];
 const sections = {};
 pages.forEach(p => { sections[p] = document.getElementById('page-' + p); });
 
@@ -381,31 +509,88 @@ document.querySelectorAll('.nav-links a').forEach(a => {
   a.addEventListener('click', (e) => { e.preventDefault(); navigateTo(a.dataset.page); });
 });
 
-document.getElementById('contactForm').addEventListener('submit', async (e) => {
-  e.preventDefault();
-  const btn = e.target.querySelector('.btn-submit');
-  btn.textContent = 'Se trimite...'; btn.disabled = true;
+// --- Supabase ---
+const supabaseUrl = 'https://ivxqnoprmdcdogihyvml.supabase.co'
+const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Iml2eHFub3BybWRjZG9naWh5dm1sIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODIzMDEwMTEsImV4cCI6MjA5Nzg3NzAxMX0.BJBgqFMQRwO6rZmBmf7QC5yI6Pe4krTpbI_WKA3Lwbs'
+const sb = window.supabase.createClient(supabaseUrl, supabaseKey)
+
+document.getElementById('contactForm').addEventListener('submit', async function(e) {
+  e.preventDefault()
+  const btn = document.getElementById('contactBtn')
+  const msg = document.getElementById('contactMsg')
+  btn.disabled = true
+  btn.textContent = 'Se trimite...'
+  msg.style.display = 'none'
+
+  const formData = new FormData(this)
   const data = {
-    name: document.getElementById('name').value,
-    email: document.getElementById('email').value,
-    phone: document.getElementById('phone').value,
-    message: document.getElementById('message').value
-  };
-  try {
-    const res = await fetch('https://formsubmit.co/ajax/mamyjeanne89@gmail.com', {
-      method: 'POST', headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-      body: JSON.stringify(data)
-    });
-    if (res.ok) {
-      btn.textContent = 'Mesaj trimis ✓'; btn.style.background = '#22c55e';
-      e.target.reset();
-      setTimeout(() => { btn.textContent = 'Trimite mesajul'; btn.style.background = ''; btn.disabled = false; }, 3000);
-    } else throw new Error('Eroare');
-  } catch {
-    btn.textContent = 'Eroare. Încearcă din nou'; btn.style.background = '#ef4444';
-    setTimeout(() => { btn.textContent = 'Trimite mesajul'; btn.style.background = ''; btn.disabled = false; }, 3000);
+    nume: formData.get('nume'),
+    email: formData.get('email'),
+    telefon: formData.get('telefon'),
+    subiect: formData.get('subiect'),
+    mesaj: formData.get('mesaj')
   }
-});
+
+  const { error } = await sb.from('contact_messages').insert([data])
+
+  if (error) {
+    msg.style.display = 'block'
+    msg.style.background = 'rgba(239,68,68,0.15)'
+    msg.style.color = '#ef4444'
+    msg.textContent = 'Eroare la trimitere. Te rugăm să încerci din nou.'
+  } else {
+    msg.style.display = 'block'
+    msg.style.background = 'rgba(34,197,94,0.15)'
+    msg.style.color = '#22c55e'
+    msg.textContent = 'Mesajul a fost trimis cu succes! Te vom contacta în scurt timp.'
+    this.reset()
+  }
+
+  btn.disabled = false
+  btn.textContent = 'Trimite mesaj'
+})
+
+// --- Magazin Online ---
+const orderForm = document.getElementById('orderForm')
+if (orderForm) {
+  orderForm.addEventListener('submit', async function(e) {
+    e.preventDefault()
+    const btn = document.getElementById('orderBtn')
+    const msg = document.getElementById('orderMsg')
+    btn.disabled = true
+    btn.textContent = 'Se trimite...'
+    msg.style.display = 'none'
+
+    const formData = new FormData(this)
+    const data = {
+      nume_companie: formData.get('nume_companie'),
+      email: formData.get('email'),
+      telefon: formData.get('telefon'),
+      tip_material: formData.get('tip_material'),
+      cantitate: formData.get('cantitate'),
+      adresa_livrare: formData.get('adresa_livrare'),
+      observatii: formData.get('observatii')
+    }
+
+    const { error } = await sb.from('orders').insert([data])
+
+    if (error) {
+      msg.style.display = 'block'
+      msg.style.background = 'rgba(239,68,68,0.15)'
+      msg.style.color = '#ef4444'
+      msg.textContent = 'Eroare la trimitere. Te rugăm să încerci din nou.'
+    } else {
+      msg.style.display = 'block'
+      msg.style.background = 'rgba(34,197,94,0.15)'
+      msg.style.color = '#22c55e'
+      msg.textContent = 'Comanda a fost trimisă cu succes! Te vom contacta în 24h pentru confirmare.'
+      this.reset()
+    }
+
+    btn.disabled = false
+    btn.textContent = 'Trimite comanda'
+  })
+}
 </script>
 </body>
 </html>

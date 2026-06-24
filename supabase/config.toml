@@ -1,0 +1,6 @@
+project_id = "beauteafricaine"
+
+[api]
+enabled = true
+schemas = ["public", "graphql_public"]
+max_rows = 1000
